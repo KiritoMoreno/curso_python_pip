@@ -11,7 +11,7 @@ def read_csv(path):
       reader)  # Tenemos la primer fila de las columnas de forma manual
     data = []
     for row in reader:
-      iterable = zip(header, row)  # Hacemo la unión de el (header) y  el (row)
+      iterable = zip(header, row)  # Hacemos la unión de el (header) y  el (row)
 
       country_dict = {
         key: value
@@ -22,5 +22,5 @@ def read_csv(path):
 
 
 if __name__ == '__main__':
-  data = read_csv('data.csv')
+  data = read_csv('C:\Users\KHIRANN\Documents\Platzi\Machine learning\PIP y Entornos Virtuales\py-project\app_class27\data.csv')
   print(data[0])  # Imprimimos el primero

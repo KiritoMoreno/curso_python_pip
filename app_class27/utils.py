@@ -17,6 +17,5 @@ def get_population(country_dict):
 
 
 def population_by_country(data, country):
-  result = list(filter(lambda item: item["Country/Territory"] == country,
-                       data))
+  result = list(filter(lambda item: item["Country/Territory"] == country,data))
   return result
