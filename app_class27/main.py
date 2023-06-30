@@ -11,7 +11,7 @@ def run():
   countries = list(map(lambda x: x['Country/Territory'], data))
   percentages = list(map(lambda x: x["World Population Percent"], data))
 
-  charts.generate_bar_chart(countries, percentages)
+  charts.generate_pie_chart(countries, percentages)
   
   
   
@@ -24,8 +24,9 @@ def run():
     country = result[0]
     print(country)
     labels, values = utils.get_population(country)
-    charts.generate_bar_chart(country["Country"], labels,values)
+    charts.generate_bar_chart(country['Country'],labels, values)
 
+  
 
 
 if __name__ == '__main__':
