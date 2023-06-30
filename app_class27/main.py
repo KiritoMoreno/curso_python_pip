@@ -1,6 +1,7 @@
 import utils
 import read_csv
 import charts
+import os
 
 
 def run():
@@ -10,7 +11,12 @@ def run():
 
   countries = list(map(lambda x: x['Country/Territory'], data))
   percentages = list(map(lambda x: x["World Population Percent"], data))
+  # Ruta del directorio de imágenes
+  directory = './imgs'
 
+  # Comprobar si el directorio existe, si no, crearlo
+  if not os.path.exists(directory):
+    os.makedirs(directory)
   charts.generate_pie_chart(countries, percentages)
   
   
@@ -24,9 +30,7 @@ def run():
     country = result[0]
     print(country)
     labels, values = utils.get_population(country)
-    charts.generate_bar_chart(country['Country'],labels, values)
-
-  
+    charts.generate_bar_chart(country['Country/Territory'],labels, values)
 
 
 if __name__ == '__main__':
