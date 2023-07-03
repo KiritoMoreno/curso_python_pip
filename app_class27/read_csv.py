@@ -22,5 +22,5 @@ def read_csv(path):
 
 
 if __name__ == '__main__':
-  data = read_csv('C:\Users\KHIRANN\Documents\Platzi\Machine learning\PIP y Entornos Virtuales\py-project\app_class27\data.csv')
+  data = read_csv('data.csv')
   print(data[0])  # Imprimimos el primero

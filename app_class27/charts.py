@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def generate_bar_chart(country, labels,values):
   fig,ax = plt.subplots()  # (fig) y (ax) son variables de matplotlib
   ax.bar(labels, values)
-  plt.savefig(f'C:\Users\KHIRANN\Documents\Platzi\Machine learning\PIP y Entornos Virtuales\py-project\app_class27\imgs\{country}.png') # Guarda en un archivo
+  plt.savefig(f'./imgs/{country}.png') # Guarda en un archivo
   plt.close()
 
 
