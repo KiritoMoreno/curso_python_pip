@@ -2,24 +2,25 @@ import utils
 import read_csv
 import charts
 import os
-
+import pandas as pd
 
 def run():
-  data = read_csv.read_csv('data.csv')
-  
-  data = list(filter(lambda item: item["Continent"] == "South America", data))
-
-  countries = list(map(lambda x: x['Country/Territory'], data))
-  percentages = list(map(lambda x: x["World Population Percent"], data))
   # Ruta del directorio de imágenes
   directory = './imgs'
 
   # Comprobar si el directorio existe, si no, crearlo
   if not os.path.exists(directory):
     os.makedirs(directory)
+
+  df = pd.read_csv('data.csv') # nos ahorramos el metodo 
+  df = df[df['Continent'] == 'Sout America']
+  # Función en pandas que nos entrega directamente los valores
+  countries = df['Country/Territory'].values
+  percentages = df['World Population Percentage'].values
+
   charts.generate_pie_chart(countries, percentages)
-  
-  
+
+  data = read_csv.read_csv('data.csv')
   
   country = input('Type Country : ')
   print(country)
