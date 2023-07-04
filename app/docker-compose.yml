@@ -1,0 +1,10 @@
+# Este archivo(yml) va a declarar donde se va iniciar y desde donde
+# Explicación: ---> Tiene que estar activado (on)
+# Quiere decir que vamos a construir este servicio desde el (context) la carpeta que estamos ubicados y en esa carpeta busca el archivo (Dockerfile)
+services:
+  app-csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  
+
