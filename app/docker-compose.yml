@@ -6,5 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/app # Enlaze a nuestros archivos en donde mi maquina se conecta a los contenedor
   
 
