@@ -1,0 +1,14 @@
+# Este archivo(yml) va a declarar donde se va iniciar y desde donde
+# Explicación: ---> Tiene que estar activado (on)
+# Quiere decir que vamos a construir este servicio desde el (context) la carpeta que estamos ubicados y en esa carpeta busca el archivo (Dockerfile)
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "80:80" # enlaze del puerto de mi maquina con el contenedor
+  
+
